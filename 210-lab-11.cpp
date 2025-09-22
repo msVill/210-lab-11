@@ -1,21 +1,21 @@
 /* Comsc-210 | Lab #11 | Martha Villalta
 I want to create a program that will keep track of how many assignments I have due
-in each class for that week. It will have a const # of assignments & a const # for quizzes
+in each class for that week.
 */
 #include <iostream>
 using namespace std;
 
-const int NUM_PROJECTS = 5, NUM_QUIZZES = 3;
+int numClasses;
 
 struct Course {
     string courseName;
     int courseNum;
-    int* weekNum;
+    int* assignments;
 
     ~Course() {
-        if (weekNum){
-            delete [] weekNum;
-            weekNum = nullptr;
+        if (assignments){
+            delete [] assignments;
+            assignments = nullptr;
         }
     }
 };
@@ -24,5 +24,23 @@ void inputCourse(Course *);
 void displayCourse(Course *);
 
 int main() {
-    
+    cout << "Enter the number of classes you want to track: ";
+    cin >> numClasses;
+
+    Course* courses = new Course[numClasses];
+
+    for(int i = 0; i < numClasses; i++) {
+        inputCourse(&courses[i]);
+    }
+
+    for(int j = 0; j < numClasses; j++) {
+        displayCourse(&courses[j]);
+    }
+
+    delete[] courses;
+
+    return 0;
+}
+
+void inputCourse(Course* classPTR) {
 }
