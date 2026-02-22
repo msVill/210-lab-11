@@ -28,5 +28,11 @@ int main() {
 
     // Okay, what do I want to do now?... I need to dynamically allocate array of Course structs
     Course* courses = new Course[numCourses];
+
+    // I want to be able to get that data and store it
+    for(int i = 0; i < numCourses; i++) {
+        cout << "Enter name for course #" << i + 1 << "; ";
+        cin >> courses[i].courseName;
+    }
     return 0;
 }
