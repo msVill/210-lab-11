@@ -12,13 +12,21 @@ using namespace std;
 // and maybe I need to let the program know HOW many classes to track.
 // --> I want to output the class names, and the number of assignments due.
 
-struct Student {
-    string name;
+struct Course {
+    string courseName;
     int numAssignments;
-    int* scores
+    int completed;
+    bool* assignments; // this is the dynamic array in struct definition.
 };
 
 int main() {
+    int numCourses; // variable to hold the number of courses we want to track
 
+    // I want the user to enter the number of courses they want to track.
+    cout << "How many courses do you want to track: ";
+    cin >> numCourses;
+
+    // Okay, what do I want to do now?... I need to dynamically allocate array of Course structs
+    Course* courses = new Course[numCourses];
     return 0;
 }
