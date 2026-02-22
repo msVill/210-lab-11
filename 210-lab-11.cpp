@@ -12,6 +12,11 @@ using namespace std;
 // and maybe I need to let the program know HOW many classes to track.
 // --> I want to output the class names, and the number of assignments due.
 
+struct Student {
+    string name;
+    int numAssignments;
+    int* scores
+};
 
 int main() {
 
