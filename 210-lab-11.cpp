@@ -38,10 +38,16 @@ int main() {
     cout << "Enter number of assignments: ";
     cin >> courses[i].numAssignments;
 
-    // Okay, now I think I nee to actually allocate memory for the assignments array
+    // Okay, now I think I need to actually allocate memory for the assignments array
     // each course has a different number of assignments.
     courses[i].assignments = new bool[courses[i].numAssignments];
     }
+
+    // I want to free memory for ach course's assignment array.
+for(int i = 0; i < numCourses; i++) {
+    delete[] courses[i].assignments;
+    //almost forgot that it's within main().
+}
 
     delete[] courses; // 
     return 0;
