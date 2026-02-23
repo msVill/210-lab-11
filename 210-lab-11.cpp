@@ -35,9 +35,16 @@ int main() {
         cin >> courses[i].courseName;
 
     // this one needs to tell me how many assignments I have for the courses.
-     courses[i].numAssignments;
+    cout << "Enter number of assignments: ";
+    cin >> courses[i].numAssignments;
+
+    // Okay, now I think I nee to actually allocate memory for the assignments array
+    // each course has a different number of assignments.
+    courses[i].assignments = new bool[courses[i].numAssignments];
     }
 
     delete[] courses; // 
     return 0;
 }
+
+// output of info will be handled here:
